@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/dashboardTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dashboard_title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lastUpdatedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_updated_placeholder"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dashboardTitleTextView" />
+
+        <!-- Health Metrics Grid -->
+        <GridLayout
+            android:id="@+id/metricsGridLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:useDefaultMargins="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboardTitleTextView">
+
+            <!-- Heart Rate Card -->
+            <androidx.cardview.widget.CardView
+                style="@style/Widget.App.CardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/heart_rate_label" />
+                    <TextView
+                        android:id="@+id/heartRateValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="78 bpm" 
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/heartRateTrendTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+2 bpm from yesterday" 
+                        android:textSize="12sp" />
+                    <!-- Placeholder for graph -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/graph_line_color_1" /> 
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Steps Card -->
+            <androidx.cardview.widget.CardView
+                style="@style/Widget.App.CardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal">
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/steps_label" />
+                    <TextView
+                        android:id="@+id/stepsValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8,423" 
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/stepsTrendTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+1,246 from yesterday" 
+                        android:textSize="12sp" />
+                    <!-- Placeholder for graph -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/graph_line_color_2" /> 
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Calories Card -->
+             <androidx.cardview.widget.CardView
+                style="@style/Widget.App.CardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal">
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/calories_label" />
+                    <TextView
+                        android:id="@+id/caloriesValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="452" 
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/caloriesTrendTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+86 from yesterday" 
+                        android:textSize="12sp" />
+                    <!-- Placeholder for graph -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/graph_line_color_3" /> 
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Activity Card -->
+             <androidx.cardview.widget.CardView
+                style="@style/Widget.App.CardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal">
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_label" />
+                    <TextView
+                        android:id="@+id/activityValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="65 min" 
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/activityTrendTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+12 min from yesterday" 
+                        android:textSize="12sp" />
+                    <!-- Placeholder for graph -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/graph_line_color_4" /> 
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+        <!-- Body Composition Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bodyCompositionCardView"
+            style="@style/Widget.App.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/metricsGridLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/body_composition_title"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/muscle_mass_label" />
+                        <TextView
+                            android:id="@+id/muscleMassValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="42%" 
+                            android:textSize="18sp" />
+                         <TextView
+                            android:id="@+id/muscleMassTrendTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Increased by 2.3% this month" 
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/body_fat_label" />
+                        <TextView
+                            android:id="@+id/bodyFatValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="18%" 
+                            android:textSize="18sp" />
+                         <TextView
+                            android:id="@+id/bodyFatTrendTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Decreased by 1.5% this month" 
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                     <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/water_weight_label" />
+                        <TextView
+                            android:id="@+id/waterWeightValueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="58%" 
+                            android:textSize="18sp" />
+                         <TextView
+                            android:id="@+id/waterWeightTrendTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Stable over the past week" 
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Gym Membership Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/gymMembershipCardView"
+            style="@style/Widget.App.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bodyCompositionCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/gymMembershipTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gym_membership_title"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/gymViewAllTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/view_all_link"
+                        android:textColor="@color/link_color_placeholder"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/gymMembershipTitleTextView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Current Gym Info -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    <!-- Placeholder for Gym Logo -->
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@android:drawable/ic_menu_compass" 
+                        android:layout_gravity="center_vertical"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/gymNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FitnessPro Gym" 
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/gymAddressTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@ 123 Main Street, New York" 
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/gymStatusTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Active membership" 
+                            android:textColor="@color/graph_line_color_1" 
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/checkInButton"
+                        style="@style/Widget.App.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/check_in_button"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/recent_check_ins_label"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder for Recent Check-ins List (RecyclerView recommended) -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="FitnessPro Gym - April 2, 2025 - 7:30 AM (45 min)" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="FitnessPro Gym - March 31, 2025 - 6:15 PM (1h 10m)" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- AI Workout Recommendations Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/aiWorkoutCardView"
+            style="@style/Widget.App.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gymMembershipCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/aiWorkoutTitleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ai_workout_recommendations_title"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/aiWorkoutViewAllTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/view_all_link"
+                        android:textColor="@color/link_color_placeholder"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/aiWorkoutTitleTextView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/todayRecommendationTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Today's Recommended Workout" 
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/todayRecommendationSubtitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Based on your recent activity and recovery metrics..." 
+                    android:textSize="12sp"/>
+
+                <!-- Placeholder for Exercises List (RecyclerView recommended) -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Bench Press: 3 sets x 8-10 reps" />
+                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Seated Rows: 3 sets x 12 reps" />
+                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Shoulder Press: 3 sets x 10 reps" />
+                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Bicep Curls: 3 sets x 12 reps" />
+
+                <Button
+                    android:id="@+id/startWorkoutButton"
+                    style="@style/Widget.App.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/start_workout_button" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/previous_workouts_label"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder for Previous Workouts List (RecyclerView recommended) -->
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lower Body Focus - April 2, 2025" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/view_link"
+                        android:textColor="@color/link_color_placeholder" />
+                 </LinearLayout>
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="HIIT Cardio Session - March 31, 2025" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/view_link"
+                        android:textColor="@color/link_color_placeholder" />
+                 </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

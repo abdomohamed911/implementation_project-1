@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RankingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/rankingTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/competition_ranking_title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/rankingViewAllTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_all_link"
+            android:textColor="@color/link_color_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rankingTitleTextView" />
+
+        <!-- Challenge Banner Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/challengeBannerCardView"
+            style="@style/Widget.App.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/colorPrimary" 
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rankingTitleTextView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- Placeholder Icon -->
+                <ImageView
+                    android:id="@+id/challengeIconImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_agenda" 
+                    app:tint="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/challengeNameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/spring_fitness_challenge_placeholder"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/challengeIconImageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/yourRankLabelTextView"/>
+
+                <TextView
+                    android:id="@+id/challengeEndDateTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/ends_in_placeholder"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/challengeIconImageView"
+                    app:layout_constraintTop_toBottomOf="@+id/challengeNameTextView"
+                    app:layout_constraintEnd_toStartOf="@+id/yourRankLabelTextView"/>
+
+                <TextView
+                    android:id="@+id/yourRankLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/your_rank_placeholder"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/yourRankValueTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#2" 
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/yourRankLabelTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Top Performers Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/topPerformersCardView"
+            style="@style/Widget.App.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/challengeBannerCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/top_performers_label"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder for Performers List (RecyclerView recommended) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView android:layout_width="24dp" android:layout_height="wrap_content" android:text="1" android:textStyle="bold"/>
+                    <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="SJ" android:layout_marginStart="8dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Sarah Johnson" android:layout_marginStart="8dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8,750 points" android:layout_marginStart="8dp"/>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/star_on" android:layout_marginStart="8dp" app:tint="#FFD700"/> 
+                </LinearLayout>
+
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:background="#EFEFEF" 
+                    android:padding="8dp">
+                    <TextView android:layout_width="24dp" android:layout_height="wrap_content" android:text="2" android:textStyle="bold"/>
+                    <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="JD" android:layout_marginStart="8dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="John Doe (You)" android:layout_marginStart="8dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7,320 points" android:layout_marginStart="8dp"/>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/star_on" android:layout_marginStart="8dp" app:tint="#C0C0C0"/> 
+                </LinearLayout>
+
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView android:layout_width="24dp" android:layout_height="wrap_content" android:text="3" android:textStyle="bold"/>
+                    <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="EW" android:layout_marginStart="8dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Emma Wilson" android:layout_marginStart="8dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6,890 points" android:layout_marginStart="8dp"/>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/star_on" android:layout_marginStart="8dp" app:tint="#CD7F32"/> 
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Rewards Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rewardsCardView"
+            style="@style/Widget.App.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topPerformersCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rewards_for_top_performers_label"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder for Rewards List -->
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/star_on" app:tint="#FFD700"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:layout_marginStart="8dp" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Free 3-month gym membership extension" android:layout_marginStart="8dp"/>
+                 </LinearLayout>
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/star_on" app:tint="#C0C0C0"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2" android:layout_marginStart="8dp" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Personal training session (5 sessions)" android:layout_marginStart="8dp"/>
+                 </LinearLayout>
+                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/star_on" app:tint="#CD7F32"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3" android:layout_marginStart="8dp" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fitness supplements package" android:layout_marginStart="8dp"/>
+                 </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

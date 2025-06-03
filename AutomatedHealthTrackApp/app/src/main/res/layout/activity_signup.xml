@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    tools:context=".SignUpActivity">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp" 
+        android:src="@drawable/ic_ht_logo_placeholder" 
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/logo_description" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/app_name_full"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+
+    <TextView
+        android:id="@+id/subtitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/automated_health_tracking_system"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitleTextView">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/createAccountTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create_your_account"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/createAccountSubtitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/start_your_health_journey"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/createAccountTitleTextView" />
+
+                <TextView
+                    android:id="@+id/fullNameLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/full_name_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/createAccountSubtitleTextView" />
+
+                <EditText
+                    android:id="@+id/fullNameEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_text_background_placeholder"
+                    android:hint="@string/full_name_hint"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fullNameLabelTextView" />
+
+                <TextView
+                    android:id="@+id/emailLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/email_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fullNameEditText" />
+
+                <EditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_text_background_placeholder"
+                    android:hint="@string/email_hint"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/emailLabelTextView" />
+
+                <TextView
+                    android:id="@+id/passwordLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/password_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+
+                <EditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_text_background_placeholder"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/passwordLabelTextView" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:id="@+id/ageLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/age_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+
+                <EditText
+                    android:id="@+id/ageEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_background_placeholder"
+                    android:hint="@string/age_hint"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ageLabelTextView" />
+
+                <TextView
+                    android:id="@+id/weightLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/weight_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+
+                <EditText
+                    android:id="@+id/weightEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/edit_text_background_placeholder"
+                    android:hint="@string/weight_hint"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/weightLabelTextView" />
+
+                <TextView
+                    android:id="@+id/heightLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/height_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ageEditText" />
+
+                <EditText
+                    android:id="@+id/heightEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_background_placeholder"
+                    android:hint="@string/height_hint"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/heightLabelTextView" />
+
+                <TextView
+                    android:id="@+id/activityLevelLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/activity_level_label"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/weightEditText" />
+
+                <Spinner
+                    android:id="@+id/activityLevelSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/spinner_background_placeholder"
+                    android:padding="12dp"
+                    android:entries="@array/activity_levels_placeholder" 
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/activityLevelLabelTextView" />
+
+                <Button
+                    android:id="@+id/createAccountButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/button_gradient_placeholder"
+                    android:text="@string/create_account_button"
+                    android:textColor="@android:color/white"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/activityLevelSpinner" /> 
+
+                <TextView
+                    android:id="@+id/loginPromptTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/already_have_account_prompt"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/loginTextView"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/createAccountButton" />
+
+                <TextView
+                    android:id="@+id/loginTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/log_in_link"
+                    android:textColor="@color/link_color_placeholder"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/loginPromptTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/loginPromptTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
