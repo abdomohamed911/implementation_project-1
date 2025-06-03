@@ -1,11 +1,33 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+// Define repositories for plugins
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
 plugins {
+    // Define the plugins required by the project
+    // The actual application of these plugins happens in the module-level build.gradle files
     id("com.android.application") version "8.2.0" apply false // Example version, user should adjust
     id("com.android.library") version "8.2.0" apply false // Example version
-    // Add other plugins like Kotlin if needed
+    // Add other plugins like Kotlin if needed, e.g.:
+    // id("org.jetbrains.kotlin.android") version "1.8.0" apply false
+}
+
+// Define repositories for dependencies (used by modules)
+// Note: In newer Gradle versions, dependency repositories are often defined in settings.gradle
+// but placing them here is also common for older setups or simplicity.
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
 
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
-
