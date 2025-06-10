@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.application") version "8.2.0"
     // Add other plugins like Kotlin if needed
 }
 
@@ -55,4 +55,6 @@ dependencies {
 
     // Add other dependencies as needed (e.g., Retrofit for networking, Room for database, MPAndroidChart for charts)
 }
+
+
 
