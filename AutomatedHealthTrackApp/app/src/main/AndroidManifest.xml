@@ -5,23 +5,23 @@
 
     <!-- Permissions (Add necessary permissions based on features) -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> --> <!-- Needed for Gym Check-in location -->
-    <!-- <uses-permission android:name="android.permission.BLUETOOTH" /> --> <!-- Needed for Wearable Sync -->
-    <!-- <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> --> <!-- Needed for Wearable Sync -->
-    <!-- <uses-permission android:name="android.permission.BODY_SENSORS" /> --> <!-- Needed for Wearable Sync -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH" /> -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> -->
+    <!-- <uses-permission android:name="android.permission.BODY_SENSORS" /> -->
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules_placeholder" 
-        android:fullBackupContent="@xml/backup_rules_placeholder" 
-        android:icon="@mipmap/ic_launcher_placeholder" 
+        android:dataExtractionRules="@xml/data_extraction_rules" 
+        android:fullBackupContent="@xml/backup_rules" 
+        android:icon="@mipmap/ic_launcher" 
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round_placeholder" 
+        android:roundIcon="@mipmap/ic_launcher_round" 
         android:supportsRtl="true"
         android:theme="@style/Theme.AutomatedHealthTrack"
         tools:targetApi="31">
 
-        <!-- Launcher Activity (Usually Login or Splash) -->
+        <!-- Rest of your activities remain the same -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -40,9 +40,6 @@
             android:exported="false"
             android:label="@string/app_name" /> 
 
-        <!-- Add other activities, services, receivers as needed -->
-
     </application>
 
 </manifest>
-
